@@ -32,12 +32,31 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    var mainViewController: MainViewController?
+    
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        //so as this function fires we need to put forth some effort.....from inside this function instantiate a view controller
+        let mainViewController = MainViewController()
+        
+        //put the view of the ViewController on screen
+        //mainViewController.show(mainViewController, sender: self)
+        
+        window?.backgroundColor = UIColor.purple
+        
+        
+        window?.rootViewController = mainViewController
+        
+        
+        //set the property to point to the viewController
+        self.mainViewController = mainViewController
+        
+        
         return true
     }
+
+   
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
